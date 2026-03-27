@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grand Adventure Trip Tracker</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rancho&family=Quicksand:wght@400;600;700&display=swap');
+
+:root {
+  --gold:      #d9a441;
+  --gold-lt:   #f5c96a;
+  --cream:     #fff8ef;
+  --tan:       #eadcc8;
+  --brown:     #3d2f1f;
+  --brown-mid: #5c4b3b;
+  --brown-lt:  #7a6a58;
+  --road:      #6b6058;
+  --sky:       #c8e6f5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: var(--cream);
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.scene {
+  background: linear-gradient(180deg, var(--sky) 0%, #e8f4fd 55%, #d4c5b0 55%, #c4b49e 100%);
+  padding: 18px 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.scene-title {
+  font-family: 'Rancho', cursive;
+  font-size: 2rem;
+  color: var(--brown);
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.scene-sub {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--brown-mid);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.road-wrap {
+  position: relative;
+  height: 48px;
+  margin: 0 8px;
+}
+
+.road {
+  position: absolute;
+  inset: 0;
+  background: var(--road);
+  border-radius: 4px;
+}
+
+.road::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #f5c96a 0, #f5c96a 18px, transparent 18px, transparent 32px);
+  transform: translateY(-50%);
+}
+
+.road-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(.34,1.2,.64,1);
+  width: 0%;
+}
+
+.car {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%) translateX(-50%) scaleX(-1);
+  font-size: 1.6rem;
+  transition
